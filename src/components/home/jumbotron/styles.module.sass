@@ -1,0 +1,43 @@
+@import '/styles/theme'
+  
+.jumbo
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  padding: spacing(16, 10)
+  height: calc(var(--app-height) - $navbar-height)
+
+  .jumboImg
+    width: 60%
+    aspect-ratio: 1
+    max-width: 600px
+    object-fit: cover
+
+  .jumboTitle
+    position: absolute
+    text-align: center
+
+    h1 
+      font-size: min(7.5vw, 6rem)
+      line-height: min(7.5vw, 6rem)
+    
+    h2
+      font-size: min(4vw, 2.5rem)
+      line-height: min(4vw, 2.5rem)
+
+  .arrowDown
+    position: absolute
+    bottom: spacing(8)
+    stroke: palette(text, primary)
+    stroke-width: 2px
+    width: 6rem
+    animation: bounce 2000ms infinite
+
+@keyframes bounce
+  0%
+    transform: none
+  50%
+    transform: translateY(-1rem)
+  100%
+    transform: none

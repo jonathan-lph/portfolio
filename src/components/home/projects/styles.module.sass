@@ -1,0 +1,78 @@
+@import '/styles/theme'
+
+.projects
+  display: grid
+  grid-template-columns: 1fr 2fr 1fr
+
+  @include bp-down('md')
+    grid-template-columns: 1fr 2fr
+    row-gap: spacing(0)
+
+.project
+  display: contents
+
+  > *
+    border-top: 1px solid palette(text, primary)
+    padding: spacing(8, 2)
+
+    @include bp-down('md')
+      padding: spacing(8, 0)
+
+  .topic
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: spacing(2)
+
+    .date
+      font-size: 1.25rem
+
+      a
+        font-size: 1rem
+
+  .image
+    display: flex
+    justify-content: center
+
+    img
+      width: 80%
+      max-width: 400px
+      min-height: 120px
+      object-fit: cover
+
+      @include bp-down('md')
+        width: 100%
+
+  .info
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: spacing(2)
+
+    @include bp-down('md')
+      grid-column: span 2
+      border: none
+      padding-top: 0
+
+    .icons
+      display: flex
+      gap: spacing(2)
+
+      i
+        font-size: 1.5rem
+
+      .pwa
+        font-size: 1.5rem
+
+.more
+  width: 100%
+  display: flex
+  justify-content: flex-end
+  border-top: 1px solid palette(text,primary)
+  font-family: map-get($typography, titleFont)
+  font-size: 1.5rem
+  font-weight: 700
+  padding: spacing(4, 2)
+
+  @include bp-down('md')
+    padding: spacing(4, 0)

@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@context/*": ["src/context/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@util/*": ["src/util/*"],
+      "@styles/*": ["styles/*"],
+      "@public/*": ["public/*"],
+      "@firebaseApp": ["firebase"]
+    }
+  }
+}

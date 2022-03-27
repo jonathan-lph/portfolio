@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
+    "devicon": "^2.15.1",
     "next": "12.1.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "sass": "^1.49.9"
   },
   "devDependencies": {
     "eslint": "8.12.0",

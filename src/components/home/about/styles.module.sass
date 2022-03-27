@@ -1,0 +1,41 @@
+@import '/styles/theme'
+
+.root
+  display: flex
+  padding: spacing(12)
+  gap: spacing(12)
+  justify-content: space-around
+
+  @include bp-down('md')
+    flex-direction: column
+    padding: spacing(8, 4)
+
+.about
+  width: 400px
+  max-width: 90%
+
+.specialties
+
+  @include bp-up('md')
+    padding-top: spacing(12)
+
+  @include bp-down('md')
+    align-self: flex-end
+    padding: spacing(0, 4)
+  
+  .category + .category
+    margin-top: spacing(4)
+
+  .categoryTitle
+    padding-bottom: spacing(2)
+
+  .icons
+    display: flex
+    gap: spacing(2)
+    padding-left: spacing(4)
+
+    i
+      font-size: 2rem
+      color: palette(text, secondary)
+
+

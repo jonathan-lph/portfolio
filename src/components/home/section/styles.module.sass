@@ -1,0 +1,13 @@
+@import '/styles/theme'
+  
+.root 
+  padding: spacing(8)
+  max-width: 1200px
+  margin: 0 auto
+
+  @include bp-down('sm')
+    padding: spacing(6)
+
+  h1
+    padding-bottom: spacing(4)
+    border-bottom: 2px solid palette(misc, divider)
