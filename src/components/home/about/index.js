@@ -59,7 +59,7 @@ export default function About() {
       </p>
       <div className={styles.specialties}>
         {specialties.map(({title, icons}) => 
-          <div className={styles.category}>
+          <div className={styles.category} key={title}>
             <h6 className={styles.categoryTitle}>
               {title}
             </h6>

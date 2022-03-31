@@ -2,6 +2,8 @@ import '@styles/global.sass'
 import { useEffect } from 'react';
 import { ThemeProvider } from '@context/ThemeContext'
 import Navigation from '@src/components/navigation';
+import Footer from '@src/components/footer';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
 
@@ -17,9 +19,14 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (<>
+    <Head>
+      <meta name="description" content="A portfolio site of Jonathan Lam, a front-end developer and UI/UX designer." />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <ThemeProvider>
       <Navigation/>
       <Component {...pageProps} />
+      <Footer/>
     </ThemeProvider>
   </>)
 }

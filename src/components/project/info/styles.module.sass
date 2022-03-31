@@ -1,0 +1,44 @@
+@import '/styles/theme'
+  
+.root
+  display: grid
+  grid-template-columns: 1fr 1fr
+  gap: spacing(8)
+  // height: calc(var(--app-height, 100vh) - (2 * $navbar-height))
+  padding: spacing(12, 8)
+  border-bottom: 1px solid palette(misc, divider)
+
+  .icons
+    display: flex
+    gap: spacing(2)
+
+    i, .pwa
+      font-size: 1.25rem
+
+  .desc
+    max-width: 400px
+    justify-self: flex-end
+    grid-row: span 2
+
+  .versions
+    display: flex
+    align-items: flex-start
+    gap: spacing(8)
+    flex-wrap: wrap
+
+  .version
+    > * + *
+      padding-top: spacing(1)
+
+    a
+      display: block
+
+    
+  @include bp-down('sm')
+    grid-template-columns: auto
+
+    .desc
+      justify-self: flex-start
+
+    .versions
+      grid-column: 1

@@ -8,7 +8,7 @@ export const useTheme = () => useContext(ThemeContext)
 export function ThemeProvider({ children }) {
   const [dark, setDark] = useState(true)
 
-  const toggleTheme = _theme => e => {
+  const toggleTheme = e => {
     // logEvent(getAnalytics(), 'theme_change', {theme: _theme})
     setDark(!dark)
   }

@@ -1,7 +1,5 @@
 @import 'theme'
 
-$default-fonts: (-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Helvetica, Verdana, Arial, sans-serif)
-
 html
   min-height: calc(100% + env(safe-area-inset-top))
   height: 100%
@@ -31,7 +29,8 @@ a
   color: inherit
   text-underline-offset: 2px
   
-
+p
+  line-height: 1.25em
 
 fieldset
   all: unset
@@ -57,28 +56,43 @@ dialog
 ul
   list-style-type: none 
 
+*::-webkit-scrollbar
+  width: 2px
+  height: 2px
+  visibility: hidden
+
+*:hover::-webkit-scrollbar
+  width: 4px
+
+*::-webkit-scrollbar-thumb
+  border-radius: 2px
+  background: grey
+
+*::-webkit-scrollbar-track
+  background: inherit
+
 // typography
 
 h1
-  font-family: 'Syne', $default-fonts
+  font-family: map-get($typography, titleFont), $default-fonts
   font-weight: 800
   font-size: 2.5rem
   line-height: 2.5rem
 
 h2
-  font-family: 'Syne', $default-fonts
+  font-family: map-get($typography, titleFont), $default-fonts
   font-weight: 700
   font-size: 2rem
   line-height: 2rem
 
 h4
-  font-family: 'Syne', $default-fonts
+  font-family: map-get($typography, titleFont), $default-fonts
   font-weight: 500
   font-size: 1.5rem
   line-height: 1.5rem
 
 h6 // overline
-  font-family: 'Syne', $default-fonts
+  font-family: map-get($typography, titleFont), $default-fonts
   font-weight: 500
   text-transform: uppercase
   font-size: 1rem

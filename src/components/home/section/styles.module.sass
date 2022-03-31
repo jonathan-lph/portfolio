@@ -2,12 +2,14 @@
   
 .root 
   padding: spacing(8)
-  max-width: 1200px
-  margin: 0 auto
-
+  border-top: 1px solid palette(misc, divider)
   @include bp-down('sm')
     padding: spacing(6)
 
+  .inner
+    max-width: map-get($breakpoints, 'lg')
+    margin: 0 auto
+
   h1
-    padding-bottom: spacing(4)
-    border-bottom: 2px solid palette(misc, divider)
+    padding: spacing(4, 0)
+    // border-bottom: 2px solid palette(misc, divider)

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import styles from "@styles/icon.module.sass"
+import styles from "./styles.module.sass"
 
 export default function PWAIcon({ className }) {
   return (

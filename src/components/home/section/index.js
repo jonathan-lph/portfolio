@@ -4,11 +4,13 @@ import styles from './styles.module.sass'
 export default function Section({title, children, className}) {
   return (
     <section className={styles.root}>
-      <h1 className={styles.title}>
-        {title}
-      </h1>
-      <div className={clsx(className && className)}>
-        {children}
+      <div className={styles.inner}>
+        <h1 className={styles.title}>
+          {title}
+        </h1>
+        <div className={clsx(className && className)}>
+          {children}
+        </div>
       </div>
     </section>
   )

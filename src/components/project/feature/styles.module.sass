@@ -1,0 +1,78 @@
+@import "/styles/theme"
+
+.root
+  width: 100%
+  display: grid
+  grid-template-columns: 4fr 6fr
+
+  .gallery
+    display: flex
+    flex-direction: column
+    gap: spacing(4)
+    padding: spacing(4)
+    border-right: 1px solid palette(misc, divider)
+    grid-column: 1
+    grid-row: 1
+    
+    img
+      height: 100%
+      max-width: 100%
+
+  .features
+    grid-column: 2
+    padding: spacing(12)
+    position: sticky
+    align-self: flex-start
+    top: 0
+    
+    .feature + .feature
+      padding-top: spacing(12)
+
+    h2
+      padding-bottom: spacing(8)
+
+    p
+      max-width: 500px
+      padding-left: spacing(10)
+
+  @include bp-down('sm')
+    display: block
+
+    .gallery
+      max-width: unset
+      flex-direction: row
+      border: 0
+      border-bottom: 1px solid palette(misc, divider)
+      overflow-x: auto
+      height: 300px
+      
+      img
+        height: 100%
+        max-width: unset
+        object-fit: cover
+
+    .features
+      position: static
+      padding: spacing(12, 8)
+
+    
+// .images
+
+//   display: flex
+//   flex-direction: column
+//   gap: spacing(4)
+//   padding: spacing(4)
+//   border-right: 1px solid palette(misc, divider)
+
+//   @include bp-down('md')
+//     flex-direction: row
+//     width: 100%
+//     height: 50vh
+//     overflow-x: scroll
+//     border-bottom: 1px solid palette(misc,divider)
+//     border-right: none
+
+//     img
+//       align-self: flex-start
+//       height: 100%
+//       max-width: 100%

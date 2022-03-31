@@ -1,68 +1,77 @@
 @import '/styles/theme'
 
 .projects
+  padding-top: spacing(8)
   display: grid
-  grid-template-columns: 1fr 2fr 1fr
+  grid-template-columns: 1fr 2fr 3fr
+  grid-template-rows: auto
 
   @include bp-down('md')
-    grid-template-columns: 1fr 2fr
-    row-gap: spacing(0)
+    grid-template-columns: 1fr 3fr
 
 .project
   display: contents
 
   > *
-    border-top: 1px solid palette(text, primary)
     padding: spacing(8, 2)
 
-    @include bp-down('md')
-      padding: spacing(8, 0)
+  .name, .desc, .image
+    border-top: 1px solid palette(misc, divider)
 
-  .topic
+  .date, .icons
+    align-self: flex-end
+
+  .name .icon
+    margin-top: spacing(2)
+
+  .learnMore
+    display: block
+    padding: spacing(2, 0)
+
+  .image
+    grid-row: span 2
+
+  .date
+    font-family: map-get($typography, titleFont), $default-fonts
+    font-size: 1.25rem
+
+  .icons
     display: flex
-    flex-direction: column
-    justify-content: space-between
+    align-items: center
     gap: spacing(2)
 
-    .date
+    i, .pwa
       font-size: 1.25rem
 
-      a
-        font-size: 1rem
+    .icon
+      font-size: 1.25rem
+      justify-self: flex-end
 
   .image
     display: flex
     justify-content: center
 
     img
-      width: 80%
-      max-width: 400px
-      min-height: 120px
+      width: 100%
+      // max-width: 400px
+      max-height: 250px
       object-fit: cover
+      // filter: grayscale(100%)
+    
+  @include bp-down('md')
 
-      @include bp-down('md')
-        width: 100%
+    > *
+      padding: spacing(8, 0)
 
-  .info
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    gap: spacing(2)
+    .desc
+      padding-left: spacing(4)
 
-    @include bp-down('md')
-      grid-column: span 2
+    .image
+      grid-column: 2 span
+      grid-row: 1 span
       border: none
-      padding-top: 0
+      padding: 0
 
-    .icons
-      display: flex
-      gap: spacing(2)
-
-      i
-        font-size: 1.5rem
-
-      .pwa
-        font-size: 1.5rem
 
 .more
   width: 100%
@@ -70,6 +79,7 @@
   justify-content: flex-end
   border-top: 1px solid palette(text,primary)
   font-family: map-get($typography, titleFont)
+  text-transform: uppse
   font-size: 1.5rem
   font-weight: 700
   padding: spacing(4, 2)
