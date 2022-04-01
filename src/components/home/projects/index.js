@@ -1,11 +1,10 @@
+import Link from "next/link"
 import { Section } from "@components/home"
 import Icon from "@src/svg/icon"
 import PWAIcon from "@src/svg/pwa"
-import clsx from "clsx"
-import Link from "next/link"
-import styles from "./styles.module.sass"
 import { slugify } from "@util/helperFn"
 import { projects } from "@util/source"
+import styles from "./styles.module.sass"
  
 export default function Projects({ showing }) {
   return (
@@ -41,9 +40,9 @@ export default function Projects({ showing }) {
             </date>
               
             <div className={styles.icons}>
-              {tech.map(cName => {
-                if (cName === 'pwa') return <PWAIcon className={styles.pwa}/>
-                else return <i className={`devicon-${cName}`}/>
+              {tech[0].map(cName => {
+                if (cName === 'pwa') return <PWAIcon className={styles.pwa} key={cName}/>
+                else return <i className={`devicon-${cName}`} key={cName}/>
               })}
               {/* <a href={link} target="_blank" className={styles.link}>
                 learn more

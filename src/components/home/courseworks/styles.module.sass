@@ -1,0 +1,67 @@
+@import '/styles/theme'
+
+.courseworks
+  padding-top: spacing(8)
+  display: grid
+  grid-template-columns: 2fr 3fr
+  grid-template-rows: auto
+
+  @include bp-down('sm')
+    display: block
+
+  .course
+    display: contents
+
+  .info
+    grid-column: 2 span
+    padding: spacing(8, 2)
+    border-top: 1px solid palette(misc, divider)
+  
+    .name
+      padding-bottom: spacing(2)
+    
+    .meta
+      display: flex
+      gap: spacing(4)
+      justify-content: space-between
+
+  .projects
+    padding: spacing(0, 2)
+
+  .project 
+    color: palette(text, secondary)
+    transition: color 150ms ease-in-out
+    cursor: pointer
+
+    + .project
+      padding-top: spacing(4)
+
+    &.selected
+      color: palette(text, primary)
+
+    &:hover
+      color: palette(text, primary)
+
+    p
+      padding: spacing(2, 0)
+
+  .main
+    margin-left: spacing(4)
+    border-top: 1px solid palette(misc, divider)
+
+    @include bp-down('sm')
+      margin: spacing(8, 2)
+
+    p
+      padding: spacing(8, 2)
+
+      @include bp-down('sm')
+        padding: spacing(8, 2)
+
+    .files
+      padding: spacing(4, 2)
+      border-top: 1px solid palette(misc, divider)
+      display: flex
+      gap: spacing(4)
+      
+      

@@ -1,18 +1,15 @@
 import { projects } from "@util/source"
 import { slugify } from "@util/helperFn"
-import styles from "@styles/project.module.sass"
-import devicon from "devicon"
-import PWAIcon from "@src/svg/pwa"
 import Info from "@src/components/project/info"
 import Features from "@src/components/project/feature"
 import Head from "next/head"
 
-export default function Stocker(props) {
+export default function Project(props) {
   return (<>
     <Head>
       <title>{props.name} - Jonathan Lam</title>
     </Head>
-    <div className={styles.root}>
+    <div>
       <Info {...props}/>
       <Features {...props}/>
     </div>

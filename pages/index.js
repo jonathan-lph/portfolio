@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Jumbotron, About, Projects } from '@src/components/home'
+import { Jumbotron, About, Projects, Courseworks } from '@src/components/home'
 
 export default function Home() {
   return (
@@ -12,6 +12,7 @@ export default function Home() {
         <Jumbotron/>
         <About/>
         <Projects showing={3}/>
+        <Courseworks/>
       </div>
 
     </div>
