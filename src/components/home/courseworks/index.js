@@ -4,28 +4,37 @@ import Section from "@src/components/home/section"
 import styles from "./styles.module.sass"
 import clsx from 'clsx'
 
-const File = ({cid, type, filename}) => {
+const File = ({cid, type, src}) => {
 
-  const getExt = (filename) => {
-    return filename.split('.').slice(-1)[0].toUpperCase()
+  const getExt = (src) => {
+    return src.split('.').slice(-1)[0].toUpperCase()
   }
 
-  if (!filename) return null
+  if (!src) return null
   return (
     <a 
-      href={`/source/${cid}/${filename}`}
+      href={`/source/${cid}/${src}`}
       target="_blank"
       rel="noreferrer"
       className={styles.file}
     >
-      {type} ({getExt(filename)})
+      {type} ({getExt(src)})
     </a>
   )
 }
 
 export default function Courseworks() {
 
-  const [project, setProject] = useState(0)
+  const [project, setProject] = useState(
+    Object.fromEntries(courseworks.map(course => [course.cid, 0]))
+  )
+
+  const handleSelectProject = (course, idx) => e => {
+    setProject({
+      ...project,
+      [course]: idx
+    })
+  }
 
   return (
     <Section title={<>Course<wbr/>works</>} className={styles.root}>
@@ -47,13 +56,13 @@ export default function Courseworks() {
               {projects.map(({name, preview}, idx) => 
                 <li
                   key={name}
-                  className={clsx(styles.project, idx === project && styles.selected)} 
-                  onClick={() => setProject(idx)}
+                  className={clsx(styles.project, idx === project[cid] && styles.selected)} 
+                  onClick={handleSelectProject(cid, idx)}
                 >
                   <h4>
                     {idx+1}. {name}
                   </h4>
-                  {idx === project &&
+                  {idx === project[cid] &&
                     <p>
                       {preview}
                     </p>
@@ -63,14 +72,14 @@ export default function Courseworks() {
             </ul>
             <div className={styles.main}>
               <p>
-                {projects[project].desc}
+                {projects[project[cid]].desc}
                 <br/><br/>
-                {projects[project].type} of {projects[project].date}
+                {projects[project[cid]].type} of {projects[project[cid]].date}
               </p>
               <div className={styles.files}>
-                <File cid={cid} type="Question" filename={projects[project].question}/>
-                <File cid={cid} type="Submission" filename={projects[project].answer}/>
-                <File cid={cid} type="Sources" filename={projects[project].additional}/>
+                {projects[project[cid]].files.map((file) =>
+                  <File cid={cid} {...file} key={file.type}/>
+                )}
               </div>
             </div>
           </li>
