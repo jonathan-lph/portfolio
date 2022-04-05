@@ -6,7 +6,8 @@
   gap: spacing(8)
   // height: calc(var(--app-height, 100vh) - (2 * $navbar-height))
   padding: spacing(12, 8)
-  border-bottom: 1px solid palette(misc, divider)
+  max-width: map-get($breakpoints, 'lg')
+  margin: 0 auto
 
   .icons
     display: flex
@@ -39,6 +40,7 @@
     
   @include bp-down('sm')
     grid-template-columns: auto
+    padding: spacing(10, 4)
 
     .desc
       justify-self: flex-start
