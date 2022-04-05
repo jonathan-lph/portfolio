@@ -18,7 +18,7 @@ export default function Info({
       <div className={styles.versions}>
         {date.reverse().map((_date, idx) => 
           <div className={styles.version} key={idx}>
-            <div>
+            <div className={styles.versionNum}>
               ver. {date.length-idx} - {_date}
             </div>
             <div className={styles.icons}>

@@ -28,9 +28,11 @@ button
 a
   color: inherit
   text-underline-offset: 2px
+  font-family: map-get($typography, titleFont)
   
 p
   line-height: 1.25em
+  letter-spacing: .25px
 
 fieldset
   all: unset
@@ -110,6 +112,9 @@ h6 // overline
     @else if type-of($color) == "color" 
       --#{$name}: #{$color}
 
+  p
+    font-weight: 300
+
 [data-theme='dark']
   @each $name, $color in $dark-colors
     @if type-of($color) == "map" 
@@ -117,6 +122,9 @@ h6 // overline
         --#{$name}-#{$subname}: #{$subcolor}   
     @else if type-of($color) == "color" 
       --theme-#{$name}: #{$color}
+
+  p
+    font-weight: 200
 
 // Base background & color
 
