@@ -17,6 +17,9 @@ export const projects = [{
     'watchlist_stock',
     'settings',
     'ticket',
+    'stocker_dashboard',
+    'stocker_transactions',
+    'stocker_batch'
   ],
   preview: 'stocker_v2',
   image_dir: 'stocker',
