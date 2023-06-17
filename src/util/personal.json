@@ -1,0 +1,39 @@
+{
+  "name": "Jonathan Lam",
+  "short_name": "Jon Lam",
+  "title": "Full-stack / Front-end Developer",
+  "about": "Self-motivated and versatile full-stack / front-end developer with a keen eye for design and a passion for delivering exceptional user experiences. Demonstrated expertise in developing professional websites and web applications with visually appealing interfaces. Strong communication and analytical skills, along with a dedication to continuous improvement to deliver the highest standards of code and software products.",
+  "skills": [{
+    "title": "Front-end Development",
+    "icons": [
+      "nextjs-plain-wordmark",
+      "react-original",
+      "typescript-plain",
+      "redux-original",
+      "sass-original",
+      "jquery-plain-wordmark"
+    ]
+  }, {
+    "title": "Back-end Development",
+    "icons": [
+      "nodejs-plain",
+      "express-original",
+      "mongodb-plain-wordmark"
+    ]
+  }, {
+    "title": "Testing / Others",
+    "icons": [
+      "jest-plain",
+      "firebase-plain",
+      "git-plain",
+      "figma-plain"
+    ]
+  }, {
+    "title": "Languages / Libraries",
+    "icons": [
+      "lua-plain-wordmark",
+      "python-plain",
+      "cplusplus-plain"
+    ]
+  }]
+}
