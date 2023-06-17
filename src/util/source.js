@@ -49,6 +49,66 @@ export const projects = [{
     desc: 'We value the feedback made by our users. Aside from constantly updating Stocker and lauching new features for our users, we utilize the in-app forum and external discussion threads to ensure their problems and suggestions are heard and dealed with within a short timeframe. Users can also report and track both their privately or publicly visible issues over our custom-made ticket system.'
   }]
 }, {
+  name: 'my little airport',
+  date: ['2023.05'],
+  desc: 'Open-sourced information site for the Hong Kong based band - my little airport.',
+  link: [
+    'mylittleairport.app'
+  ],
+  source: [
+    'github.com/jonathan-lph/mylittleairport'
+  ],
+  images: [
+    'main_desktop',
+    'tracks_desktop',
+    'track_desktop',
+    'track_mobile',
+    'search_mobile',
+    'share'
+  ],
+  image_dir: 'mla',
+  preview: 'mla',
+  tech: [
+    [
+      'nextjs-plain-wordmark',
+      'typescript-plain',
+      'sass-original',
+      'mongodb-plain-wordmark'
+    ]
+  ],
+  features: [{
+    title: 'Sourced and Verified',
+    desc: 'All lyrics, album arts, and album details are sourced from multiple sources and manually verified to ensure everything shown in this page is correct. Thanks to some kind contributors, some information of the lesser known (and hence seldom documented) EPs and singles, such as Gi Gi Leung is Dead, is included in this page as well.'
+  }, {
+    title: 'Open-sourced',
+    desc: 'The source code is hosted on Github and all information is avaliable to be downloaded and cloned for community development. The project is strongly-typed and provide support for easy data manipulation (e.g. migration from local files to databases) to allow contributors from common fans to developers to expand the code base without hassle.'
+  }, {
+    title: 'Built for Social',
+    desc: 'The project equips with engaging and intuitive UI for users to look up related information with ease. It also has a lyrics-sharing function for users to share they favourite or suitable lyrics at the time.'
+  }]
+}, {
+  name: 'Luk Hap',
+  date: ['2022.01'],
+  desc: 'Word game for promoting and practising JyutPing, the Cantonese romanisation system. Adapted from the popular word game Wordle to Next.JS.',
+  link: ['lukhap.jonathanl.dev'],
+  source: ['github.com/jonathan-lph/LukHap'],
+  images: ['layout', 'info', 'guide'],
+  image_dir: 'lukhap',
+  preview: 'lukhap',
+  tech: [
+    [
+      'nextjs-plain-wordmark',
+      'sass-original',
+    ]
+  ],
+  features: [{
+    title: 'Standardized JyutPing',
+    desc: 'To allow users learn the most popular and standardized Cantonese romanisation system, Luk Hap uses JyutPing for the game. The gameplay is greatly modified from the original game Wordle to provide a challenging yet informational experience.'
+  }, {
+    title: 'Follow-up learning',
+    desc:  'No matter the level or knowledge of your skill in JyutPing, Luk Hap offers multiple sources and guides for you to learn and practise this system. It is also open source and welcome feedbacks to continualy improving the game.'
+  }]
+}, {
   name: 'WNRS Online',
   date: ['2022.02', '2021.05'],
   desc: "Online adaptation of the conversation card game We're Not Really Strangers. Revamped to include seeded randomizer, theme customization, and more.",
@@ -89,28 +149,6 @@ export const projects = [{
   }, {
     title: 'Customization',
     desc: 'Revamped from version 1, version 2 now allows users to input their name. You will never get lost in the deep conversation now that all turns and cards are labeled. Themes are also now customizable and does not correlate to the playing decks.'
-  }]
-}, {
-  name: 'Luk Hap',
-  date: ['2022.01'],
-  desc: 'Word game for promoting and practising JyutPing, the Cantonese romanisation system. Adapted from the popular word game Wordle to Next.JS.',
-  link: ['lukhap.jonathanl.dev'],
-  source: ['github.com/jonathan-lph/LukHap'],
-  images: ['layout', 'info', 'guide'],
-  image_dir: 'lukhap',
-  preview: 'lukhap',
-  tech: [
-    [
-      'nextjs-plain-wordmark',
-      'sass-original',
-    ]
-  ],
-  features: [{
-    title: 'Standardized JyutPing',
-    desc: 'To allow users learn the most popular and standardized Cantonese romanisation system, Luk Hap uses JyutPing for the game. The gameplay is greatly modified from the original game Wordle to provide a challenging yet informational experience.'
-  }, {
-    title: 'Follow-up learning',
-    desc:  'No matter the level or knowledge of your skill in JyutPing, Luk Hap offers multiple sources and guides for you to learn and practise this system. It is also open source and welcome feedbacks to continualy improving the game.'
   }]
 }]
 
