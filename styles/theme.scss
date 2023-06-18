@@ -14,7 +14,7 @@ $default-fonts: (-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Robot
 
 $typography: (
   fontSize: 16px,
-  titleFont: 'Syne',
+  titleFont: 'DM Sans',
   contentFont: 'Outfit',
   fontWeight: (
     light:   300,
@@ -52,6 +52,7 @@ $dark-colors: (
   ),
   misc: (
     background: #121213,
+    backgroundRgb: (18, 18, 19),
     divider: rgba(255, 255, 255, .8),
   ),
   action: (
@@ -70,6 +71,7 @@ $light-colors: (
   ),
   misc: (
     background: #f4f4f4,
+    backgroundRgb: (244, 244, 244),
     divider: rgba(0, 0, 0, .8),
   ),
   action: (
