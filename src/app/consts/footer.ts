@@ -1,0 +1,1 @@
+export const footer = "Designed in Figma, built with Next.js and Sass, and deployed with GitHub Pages (GitHub Actions). Source code can be found in [GitHub](https://github.com/jonathan-lph/portfolio/tree/v2)."

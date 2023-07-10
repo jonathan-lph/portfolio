@@ -1,0 +1,172 @@
+@import 'src/app/assets/styles/theme'
+@import 'src/app/assets/styles/animations'
+
+$expand-bar-transition-ms: 200ms
+$expand-content-transition-ms: 600ms
+$content-transition-ms: 400ms
+
+$section-gap: spacing(4)
+
+.root
+  border-bottom: 1px solid rgba(0,0,0,0.1)
+
+  &.expanded
+    border-color: palette(misc, divider)
+
+.listItem
+  width: 100%
+  position: relative
+  padding: spacing(2, 0)
+  cursor: pointer
+  transition: padding $expand-bar-transition-ms ease-in-out
+
+  .summary
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  .techStack
+    padding: spacing(2, 0)
+    display: flex
+    flex-wrap: wrap
+    gap: spacing(1)
+
+    .tech
+      font-size: .8rem
+      padding: spacing(0.25, 2)
+      border-radius: 30px
+      border: 1px solid palette(misc, divider)
+
+  .name
+    transition: color 200ms ease-in-out
+    position: relative
+
+    &.stroke::after
+      content: ''
+      background: url(/assets/stroke.png)
+      opacity: .95
+      background-size: 100% 100%
+      width: 100%
+      height: 100%
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+
+  .expandIcon
+    transition: transform 200ms ease-in-out
+
+  &.unmount .expandIcon
+    transform: rotate(180deg)  
+
+  .expandHint
+    font-size: .75rem
+    position: absolute
+    bottom: spacing(2)
+    width: 100%
+    left: 0
+    display: none
+    color: palette(text, secondary)
+
+  @include hover
+    padding-bottom: spacing(8)
+
+    .name
+      color: palette(theme, main)
+
+    .expandHint
+      display: flex
+      align-items: center
+      justify-content: center
+      animation: fadeSlideInTop 400ms ease-in-out
+
+    &.unmount .expandHint
+      animation: fadeIn 400ms ease-in-out, slideInBottom 400ms ease-in-out
+
+.contentWrapper
+  overflow: hidden
+  opacity: 0
+  transition: height $expand-content-transition-ms ease-in-out
+
+  &.mount
+    display: block
+    animation: fadeIn $content-transition-ms ease-in-out $expand-content-transition-ms forwards
+
+  &.unmount
+    animation: fadeOut $content-transition-ms ease-in-out
+
+.content 
+  padding: spacing(2, 0)
+  
+  > * + *
+    margin-top: $section-gap
+
+.details
+  width: 100%
+  display: grid
+  grid-template-columns: 40% 60%
+
+.infoSheet
+  font-size: .875rem
+
+  dt
+    @include overline
+    color: palette(theme, main)
+    margin-top: spacing(4)
+    margin-bottom: spacing(1)
+
+    &:first-child
+      margin-top: 0
+
+.links
+  display: flex
+  gap: spacing(2)
+  flex-wrap: wrap
+
+.previews
+  width: 100%
+  
+  img
+    margin: spacing(2, 0)
+    width: 100%
+
+.collapseHint
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  font-size: .75rem
+  color: palette(text, secondary)
+
+@include bp-down(md)
+  .details
+    display: block
+    > * + *
+      margin-top: $section-gap
+
+  .infoSheet
+    display: grid
+    grid-template-columns: 40% 60%
+    row-gap: spacing(2)
+
+    dt
+      margin: 0
+  
+  .description
+    grid-column: 2 span
+
+// @include bp-down(sm)
+//   .listItem .techStack .tech
+//     font-size: .8rem
+
+    
+@keyframes fadeSlideInTop
+  0%
+    opacity: 0
+  33%
+    opacity: 0
+    transform: translateY(-25%)
+  100%
+    opacity: 1
+    transform: translateY(0)
+

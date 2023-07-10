@@ -1,0 +1,18 @@
+@import 'src/app/assets/styles/theme'
+
+.root
+  font-size: .875rem
+  display: inline-flex
+  align-items: center
+  border-radius: 5rem
+  border: 1px solid palette(misc, divider)
+  padding: spacing(1, 3, 1, 4)
+  transition: all 200ms ease-in-out
+  text-transform: uppercase
+  
+  &:hover
+    background: palette(text, primary)
+    color: palette(misc, background)
+  
+  &.iconFirst
+    padding: spacing(1, 4, 1, 3)

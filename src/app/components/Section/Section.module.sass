@@ -1,0 +1,62 @@
+@import 'src/app/assets/styles/theme'
+@import 'src/app/assets/styles/animations'
+
+.root
+  margin: spacing(32, 0)
+  display: grid
+  grid-template-columns: 40% 60%
+
+.hr
+  grid-column: 2 span
+  margin-bottom: spacing(4)
+  transform: scaleX(0)
+
+.title
+  text-transform: uppercase
+
+.content, .title
+  opacity: 0
+
+.enter
+
+  .hr
+    animation: growHrFromLeft 500ms forwards
+
+  .title
+    animation: fadeIn 500ms forwards
+
+  .content
+    animation: fadeIn 750ms forwards, slideInTop 750ms
+    animation-delay: 500ms
+
+@include bp-down(lg)
+  .root
+    grid-template-columns: 30% 70%
+
+@include bp-down(md)
+  .root
+    display: block
+
+  .title
+    margin-bottom: spacing(12)
+
+  .content
+    margin-left: 15%
+
+@include bp-down(sm)
+  .content
+    margin-left: unset
+
+@keyframes growHrFromLeft
+  0%
+    transform-origin: 0% 50%
+
+  100%
+    transform-origin: 0% 50%
+    transform: scaleX(1)
+
+@keyframes slideInTop
+  0%
+    transform: translateY(-20px)
+  100%
+    transform: translateY(0px)

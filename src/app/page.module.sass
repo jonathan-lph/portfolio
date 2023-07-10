@@ -1,0 +1,16 @@
+@import 'src/app/assets/styles/theme'
+
+.root, .footer
+  padding: spacing(8)
+
+.footer
+  padding: spacing(0, 8, 8)
+  font-size: .8rem
+  color: palette(text, secondary)
+
+@include bp-down(sm)
+  .root
+    padding: spacing(8, 4)
+
+  .footer
+    padding: spacing(0, 4, 4)

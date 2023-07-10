@@ -1,0 +1,67 @@
+@import './theme'
+
+html
+  min-height: calc(100% + env(safe-area-inset-top))
+  height: 100%
+  font-family: map-get($typography, contentFont), $default-fonts
+  font-size: map-get($typography, fontSize)
+  font-weight: normal
+  scroll-behavior: smooth
+  -webkit-font-smoothing: antialiased
+
+  @include bp-down(sm)
+    font-size: map-get($typography, sm-fontSize)
+
+body
+  background: palette(misc, background)
+  color: palette(text, primary)
+  font-size: 1rem
+
+main
+  max-width: map-get($breakpoints, xl)
+  margin: 0 auto
+
+h1, h2, h3
+  font-family: map-get($typography, titleFont)
+  font-weight: map-get($typography, fontWeight, light)
+
+h1
+  font-size: 3rem
+
+h2
+  font-size: 2rem
+
+h3
+  font-size: 1.5rem
+
+// Resets
+
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+
+button
+  all: unset
+  border: 0
+  outline: 0
+  cursor: pointer
+
+a
+  all: unset
+  color: inherit
+  cursor: pointer
+
+ul
+  list-style-type: none
+
+// Set up CSS Variables
+// Ref: https://codepen.io/jakealbaugh/post/css4-variables-and-sass
+
+:root
+  @each $name, $color in $light-colors
+    @if type-of($color) == "map"
+      @each $subname, $subcolor in $color
+        --#{$name}-#{$subname}: #{$subcolor}
+    @else if type-of($color) == "color"
+      --#{$name}: #{$color}

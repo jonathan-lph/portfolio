@@ -1,0 +1,16 @@
+@import 'src/app/assets/styles/theme'
+
+.root > * + *
+  margin: spacing(4, 0)
+
+.about
+  font-size: 1.25rem
+  line-height: 1.25em
+
+  > p + p
+    margin: spacing(4, 0)
+
+.socials
+  display: flex
+  gap: spacing(1)
+  flex-wrap: wrap
