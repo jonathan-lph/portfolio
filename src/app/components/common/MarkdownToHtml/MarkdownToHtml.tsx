@@ -18,6 +18,7 @@ export default function MarkdownToHtml({
           </Fragment>
         ) : (
           <a
+            key={idx}
             href={(section as LinkObject).href}
             target="_blank"
             className={clsx(styles.link, aClass && aClass)}

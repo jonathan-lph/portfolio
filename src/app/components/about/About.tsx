@@ -10,8 +10,8 @@ export default function About(): JSX.Element {
   return (
     <Section title="About" className={styles.root}>
       <div className={styles.about}>
-        {about.about.split('\n').map((para) => (
-          <p>
+        {about.about.split('\n').map((para, idx) => (
+          <p key={`para-${idx}`}>
             <MarkdownToHtml text={para}/>
           </p>
         ))}

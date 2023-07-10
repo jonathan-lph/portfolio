@@ -129,8 +129,8 @@ export default function Project({
               )}
             </div>
             <div className={styles.previews}>
-              {previews.map((preview) => (
-                <img src={preview} key={preview} />
+              {previews.map((preview, idx) => (
+                <img src={preview} key={preview} alt={`Image ${idx} for project ${name}`} />
               ))}
             </div>
             <button
