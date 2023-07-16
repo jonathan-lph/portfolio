@@ -26,10 +26,6 @@ export const about : {
     type: 'Email',
     icon: 'email',
     href: 'mailto:jonathan.lph98@gmail.com'
-  }, {
-    type: 'Instagram',
-    icon: 'instagram',
-    href: 'https://www.instagram.com/jonathan.lph/'
   }],
   cv: '/jonathan_lam_resume.pdf'
 }
