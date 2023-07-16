@@ -31,5 +31,5 @@ export const about : {
     icon: 'instagram',
     href: 'https://www.instagram.com/jonathan.lph/'
   }],
-  cv: '/jonathan_lam_cv.pdf'
+  cv: '/jonathan_lam_resume.pdf'
 }

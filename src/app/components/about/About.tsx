@@ -23,7 +23,7 @@ export default function About(): JSX.Element {
             className={styles.social}
             icon="download"
           >
-            CV
+            Resume
           </ExternalButton>
         }
         {about.links.map((link) => (
