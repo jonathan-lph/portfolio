@@ -1,10 +1,7 @@
-import { Fragment } from 'react'
-import styles from './About.module.sass'
+import { ExternalButton, MarkdownToHtml } from '@components/common/index'
 import { Section } from '@components/Section'
-import { Icon, ExternalButton } from '@components/common/index'
 import { about } from '@consts/about'
-import formatMarkdown, { LinkObject } from '@/app/util/formatMarkdown'
-import MarkdownToHtml from '../common/MarkdownToHtml/MarkdownToHtml'
+import styles from './About.module.sass'
 
 export default function About(): JSX.Element {
   return (
