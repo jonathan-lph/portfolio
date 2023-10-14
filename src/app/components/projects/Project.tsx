@@ -26,8 +26,8 @@ export default function Project({
   const rootRef = useRef<HTMLLIElement | null>(null)
   const imagesRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
-  const shouldRenderContent = useDelayUnmount(isExpanded, 600)
-  const shouldRenderTooltip = useDelayUnmount(isExpanded, 400 + 600)
+  const shouldRenderContent = useDelayUnmount(isExpanded, 300)
+  const shouldRenderTooltip = useDelayUnmount(isExpanded, 300 + 300)
 
   const toggleExpanded = (setPosition: boolean) => () => {
     setIsExpanded((_isExpanded) => !_isExpanded)
