@@ -5,12 +5,16 @@
 }
 
 .banner {
+  height: 61.8%;
+  background: var(--color-ink);
+}
+
+.bannerInner {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 61.8%;
+  height: 100%;
   padding: 4.125rem 2.625rem;
-  background: var(--color-ink);
 }
 
 .handIcon {
@@ -56,6 +60,9 @@
 
   .banner {
     height: 55%;
+  }
+
+  .bannerInner {
     padding: 2.25rem 1.5rem;
   }
 

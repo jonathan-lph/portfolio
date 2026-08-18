@@ -1,5 +1,7 @@
+import Header from './sections/Header/Header'
+
 function App() {
-  return null
+  return <Header />
 }
 
 export default App
