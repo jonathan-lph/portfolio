@@ -1,0 +1,18 @@
+:root {
+  --color-bg: #f6f1ea;
+  --color-ink: #201c1c;
+  --color-accent: #df7c26;
+
+  /* Spacing scale — matches gutters/gaps seen in the Figma design (1rem = 16px) */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 1rem; /* 16px */
+  --space-4: 1.5rem; /* 24px */
+  --space-5: 2rem; /* 32px */
+  --space-6: 2.625rem; /* 42px */
+  --space-7: 4rem; /* 64px */
+
+  /* Breakpoint reference — not usable as a var() inside @media,
+     kept here so every media query in the codebase agrees on the value */
+  --breakpoint-mobile: 48rem; /* 768px */
+}

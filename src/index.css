@@ -1,13 +1,28 @@
+@import './styles/theme.css';
+@import './styles/typography.css';
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 100%; /* 1rem = 16px */
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height);
 }
 
 #root {
