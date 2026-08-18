@@ -15,4 +15,7 @@
   /* Breakpoint reference — not usable as a var() inside @media,
      kept here so every media query in the codebase agrees on the value */
   --breakpoint-mobile: 48rem; /* 768px */
+
+  /* Max width for text/layout content; full-bleed backgrounds and dividers can ignore it */
+  --content-max-width: 1800px;
 }
