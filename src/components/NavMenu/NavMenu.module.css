@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem; /* 4px */
+}
+
+.link {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .nav {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .link {
+    font-size: var(--text-sm);
+  }
+}
