@@ -12,6 +12,7 @@ Conventions for working on this repo. Read this before making changes.
 
 - CSS Modules (`*.module.css`) for every component and section. No Tailwind, no CSS-in-JS.
 - Shared design tokens (colors, spacing, type scale, `@font-face`) live in `src/styles/` as global CSS custom properties — components consume them via `var(--token-name)`, they don't redefine values.
+- Use `rem` for spacing and font sizes, not `px` (`html { font-size: 100% }` in `src/index.css` keeps `1rem == 16px`).
 - Icons come from `lucide-react` — don't hand-roll or download SVG icons that exist in that set.
 
 ## Folder layout
