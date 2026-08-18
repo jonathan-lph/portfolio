@@ -1,0 +1,56 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.625rem;
+}
+
+.text {
+  width: 50%;
+  max-width: calc(500px + 2.625rem * 2);
+  margin-top: 19.25rem;
+  padding: 2.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15em;
+  font-size: var(--text-base);
+  line-height: var(--line-height);
+}
+
+.text p {
+  margin: 0;
+}
+
+.illustration {
+  width: 50%;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.625rem;
+}
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    gap: 20vw; /* clears the SectionLabel card's skewY overshoot on mobile */
+  }
+
+  .text {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    padding: 1.5rem;
+    font-size: var(--text-sm);
+  }
+
+  .illustration {
+    width: 100%;
+    order: -1;
+  }
+
+  .end {
+    padding: 1.5rem;
+  }
+}
