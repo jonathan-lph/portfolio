@@ -6,7 +6,8 @@ Conventions for working on this repo. Read this before making changes.
 
 - Vite + React 19 + TypeScript, package manager `pnpm`.
 - No router — single scrolling page with in-page anchor navigation (`#about`, `#projects`, `#contact`).
-- Commands: `pnpm dev`, `pnpm build` (type-checks then builds), `pnpm lint`, `pnpm preview`.
+- Commands: `pnpm dev`, `pnpm build` (type-checks then builds), `pnpm lint`, `pnpm format` / `pnpm format:check`, `pnpm preview`.
+- Code is formatted with Prettier (`.prettierrc.json`) — run `pnpm format` before committing if unsure.
 
 ## Styling
 
