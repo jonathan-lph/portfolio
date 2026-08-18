@@ -15,6 +15,7 @@ Conventions for working on this repo. Read this before making changes.
 - Shared design tokens (colors, spacing, type scale, `@font-face`) live in `src/styles/` as global CSS custom properties — components consume them via `var(--token-name)`, they don't redefine values.
 - Use `rem` for spacing and font sizes, not `px` (`html { font-size: 100% }` in `src/index.css` keeps `1rem == 16px`). For bigger layout dimensions (component/container widths and heights, section sizing), use `px` instead.
 - Icons come from `lucide-react` — don't hand-roll or download SVG icons that exist in that set.
+- Text and layout content is constrained to `--content-max-width` (1800px) via the shared `Container` component (`src/components/Container/`). Full-bleed backgrounds and dividers span the full viewport width and sit outside `Container`.
 
 ## Folder layout
 
