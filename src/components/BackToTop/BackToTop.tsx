@@ -8,7 +8,7 @@ function BackToTop() {
 
   return (
     <button type="button" className={styles.button} onClick={scrollToTop} aria-label="Back to top">
-      <ArrowUp strokeWidth={1.5} />
+      <ArrowUp strokeWidth={1.0} />
     </button>
   )
 }

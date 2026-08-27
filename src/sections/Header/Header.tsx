@@ -9,7 +9,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.banner}>
         <Container className={styles.bannerInner}>
-          <Hand strokeWidth={1.5} className={styles.handIcon} />
+          <Hand strokeWidth={1.0} className={styles.handIcon} />
           <NavMenu />
         </Container>
       </div>

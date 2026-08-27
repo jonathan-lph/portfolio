@@ -37,7 +37,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             rel="noopener noreferrer"
             aria-label={`${title} GitHub repository`}
           >
-            <GitFork strokeWidth={1.5} />
+            <GitFork strokeWidth={1.0} />
           </a>
         )}
         {links.website && (
@@ -48,7 +48,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             rel="noopener noreferrer"
             aria-label={`${title} website`}
           >
-            <ArrowUpRight strokeWidth={1.5} />
+            <ArrowUpRight strokeWidth={1.0} />
           </a>
         )}
         {links.caseStudy && (
@@ -59,7 +59,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             rel="noopener noreferrer"
             aria-label={`${title} case study`}
           >
-            <ArrowDownRight strokeWidth={1.5} />
+            <ArrowDownRight strokeWidth={1.0} />
           </a>
         )}
       </div>
