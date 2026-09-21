@@ -1,0 +1,49 @@
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2.625rem;
+}
+
+.illustration {
+  width: 50%;
+}
+
+.details {
+  width: 50%;
+  max-width: calc(403px + 2.625rem * 2);
+  margin-top: 300px;
+  padding: 2.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.end {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2.625rem;
+}
+
+@media (max-width: 767px) {
+  .row {
+    flex-direction: column;
+    gap: 20vw; /* clears the SectionLabel card's skewY overshoot on mobile */
+  }
+
+  .illustration {
+    width: 100%;
+  }
+
+  .details {
+    width: 100%;
+    max-width: none;
+    margin-top: 0;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .end {
+    padding: 1.5rem;
+  }
+}
