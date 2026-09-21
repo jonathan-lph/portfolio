@@ -11,6 +11,12 @@
   cursor: pointer;
 }
 
+/* Left-handed layout: push the button to the opposite (left) edge of its row.
+   The auto margin overrides the row's justify-content: flex-end. */
+.left {
+  margin-right: auto;
+}
+
 .button svg {
   width: 100%;
   height: 100%;
