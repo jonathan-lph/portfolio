@@ -9,16 +9,18 @@ const CONTACTS = [
 
 function ContactList() {
   return (
-    <dl className={styles.list}>
-      {CONTACTS.map((contact) => (
-        <Fragment key={contact.label}>
-          <dt className={styles.label}>{contact.label}</dt>
-          <dd className={styles.value}>
-            <a href={contact.href}>{contact.value}</a>
-          </dd>
-        </Fragment>
-      ))}
-    </dl>
+    <div className={styles.list}>
+      <dl className={styles.grid}>
+        {CONTACTS.map((contact) => (
+          <Fragment key={contact.label}>
+            <dt className={styles.label}>{contact.label}</dt>
+            <dd className={styles.value}>
+              <a href={contact.href}>{contact.value}</a>
+            </dd>
+          </Fragment>
+        ))}
+      </dl>
+    </div>
   )
 }
 
