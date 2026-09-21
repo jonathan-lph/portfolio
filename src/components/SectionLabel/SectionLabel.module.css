@@ -29,18 +29,47 @@
   bottom: 0;
   left: 0;
   width: 90%;
-  height: 100%;
+  /* +1px so the top border overlaps the section divider above instead of
+     stacking below it (avoids a doubled 2px line while resting/flat).
+     Anchored at the bottom, so the skew origin stays put. */
+  height: calc(100% + 1px);
   background: var(--color-bg);
   border: 1px solid var(--color-ink);
-  transform: skewY(10deg);
+  /* Resting/"open" state — also the fallback when scroll-driven
+     animations aren't supported. --open-skew flips per direction. */
+  --open-skew: 10deg;
+  transform: skewY(var(--open-skew));
   transform-origin: bottom left;
+  /* Scroll-linked: starts flat (width 100%, skewY 0) and "opens" as the
+     card scrolls up through the viewport. */
+  animation: section-label-open linear both;
+  animation-timeline: view(200px);
+  animation-range: entry 0% cover 60%;
 }
 
 .flip .card {
   left: auto;
   right: 0;
-  transform: skewY(-10deg);
+  --open-skew: -10deg;
   transform-origin: bottom right;
+}
+
+@keyframes section-label-open {
+  from {
+    width: 100%;
+    transform: skewY(0deg);
+  }
+
+  to {
+    width: 90%;
+    transform: skewY(var(--open-skew));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
 }
 
 .label {
