@@ -1,12 +1,9 @@
 .footer {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
   width: 100%;
   height: 485px;
   background: var(--color-ink);
   overflow: hidden;
+  view-timeline-name: --footer-enter;
 }
 
 @media (max-width: 767px) {
@@ -15,11 +12,18 @@
   }
 }
 
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+}
+
 .corridor {
-  top: 0;
-  left: 0;
+  position: relative;
   height: 100%;
   width: 250px;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
@@ -28,18 +32,44 @@
   }
 }
 
-.frame {
-  fill: none;
-  stroke: var(--color-bg);
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: var(--color-bg);
 }
 
-.wedge {
-  fill: var(--color-bg);
-  stroke: var(--color-ink);
+.card {
+  position: absolute;
+  inset: 0;
+  background: var(--color-ink);
+  /* Resting state doubles as the fallback without scroll-driven animations.
+     The corridor's overflow trims the skewed card to the visible triangle. */
+  --lay-skew: 72deg;
+  transform: skewX(var(--lay-skew));
+  transform-origin: bottom left;
+  animation: footer-card-lay linear both;
+  animation-timeline: --footer-enter;
+  animation-range: entry 25% entry 100%;
+}
+
+@keyframes footer-card-lay {
+  from {
+    transform: skewX(0deg);
+  }
+
+  to {
+    transform: skewX(var(--lay-skew));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
 }
 
 .message {
-  padding: 1.75rem 2.5rem;
+  padding: 1.75rem 2.625rem;
   text-align: right;
   font-family: var(--font-family);
   font-weight: var(--font-weight-semibold);
@@ -50,7 +80,7 @@
 
 @media (max-width: 767px) {
   .message {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     font-size: 2.625rem; /* 42px, mobile */
   }
 }
