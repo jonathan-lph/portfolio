@@ -2,6 +2,7 @@
   position: relative;
   height: 351px;
   background: var(--color-ink);
+  view-timeline-name: --projects-banner;
 }
 
 .bannerInner {
@@ -9,18 +10,73 @@
   height: 100%;
 }
 
+/* Both shapes start as two stacked full-width boxes and settle into the
+   resting geometry below on scroll. Resting values double as the fallback. */
 .box {
   position: absolute;
-  left: 50%;
-  top: 36.18%;
-  transform: translateX(-50%);
-  width: 79.1%;
-  height: 43.02%;
+  left: 10.42%;
+  bottom: 20.8%;
+  width: 79.16%;
+  /* +1px so the top border overlaps the divider above in the start state. */
+  height: calc(43.02% + 1px);
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-bg);
   border: 1px solid var(--color-ink);
+  /* Keyframes are sampled from the floor's projection so the bottom edge
+     stays hinged to the trapezoid's top edge; the px term offsets the +1px. */
+  transform-origin: 50% 100%;
+  transform: translateY(0) scale(1);
+  animation: banner-box-recede linear both;
+  animation-timeline: --projects-banner;
+  animation-range: entry 40% cover 50%;
+}
+
+@keyframes banner-box-recede {
+  0% {
+    transform: translateY(calc(-57.67% + 0.58px)) scale(1.2633);
+  }
+
+  10% {
+    transform: translateY(calc(-54.04% + 0.54px)) scale(1.2256);
+  }
+
+  20% {
+    transform: translateY(calc(-49.73% + 0.5px)) scale(1.1904);
+  }
+
+  30% {
+    transform: translateY(calc(-44.84% + 0.45px)) scale(1.1577);
+  }
+
+  40% {
+    transform: translateY(calc(-39.45% + 0.39px)) scale(1.1277);
+  }
+
+  50% {
+    transform: translateY(calc(-33.63% + 0.34px)) scale(1.1002);
+  }
+
+  60% {
+    transform: translateY(calc(-27.44% + 0.27px)) scale(1.0753);
+  }
+
+  70% {
+    transform: translateY(calc(-20.94% + 0.21px)) scale(1.0528);
+  }
+
+  80% {
+    transform: translateY(calc(-14.17% + 0.14px)) scale(1.0329);
+  }
+
+  90% {
+    transform: translateY(calc(-7.19% + 0.07px)) scale(1.0153);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
 .label {
@@ -36,12 +92,35 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 20.8%;
+  height: 45.61%;
+  background: var(--color-bg);
+  border: 1px solid var(--color-ink);
+  /* Tipped back around its bottom edge; angle and depth (1.416x banner
+     height) project to the original trapezoid. */
+  --fall-depth: 497px;
+  --fall-angle: 54.8deg;
+  transform-origin: 50% 100%;
+  transform: perspective(var(--fall-depth)) rotateX(var(--fall-angle));
+  animation: banner-floor-fall linear both;
+  animation-timeline: --projects-banner;
+  animation-range: entry 40% cover 50%;
 }
 
-.trapezoid polygon {
-  fill: var(--color-bg);
-  stroke: var(--color-ink);
+@keyframes banner-floor-fall {
+  from {
+    transform: perspective(var(--fall-depth)) rotateX(0deg);
+  }
+
+  to {
+    transform: perspective(var(--fall-depth)) rotateX(var(--fall-angle));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .box,
+  .trapezoid {
+    animation: none;
+  }
 }
 
 .grid {
@@ -61,6 +140,10 @@
 @media (max-width: 767px) {
   .banner {
     height: 219px;
+  }
+
+  .trapezoid {
+    --fall-depth: 310px;
   }
 
   .label {

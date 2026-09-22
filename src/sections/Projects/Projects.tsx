@@ -13,9 +13,7 @@ function Projects() {
           <div className={styles.box}>
             <p className={styles.label}>projects</p>
           </div>
-          <svg className={styles.trapezoid} viewBox="0 0 100 100" preserveAspectRatio="none">
-            <polygon points="10.42,0 89.58,0 100,100 0,100" vectorEffect="non-scaling-stroke" />
-          </svg>
+          <div className={styles.trapezoid} />
         </Container>
       </div>
       <Container className={styles.grid}>
