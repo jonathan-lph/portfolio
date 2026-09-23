@@ -25,6 +25,8 @@
 }
 
 .description {
+  /* Follows the title in the DOM for reading order, but displays above it. */
+  order: -1;
   font-size: var(--text-base);
   width: 75%;
   margin: 0;

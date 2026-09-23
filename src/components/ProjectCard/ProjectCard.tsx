@@ -1,3 +1,4 @@
+import { useId } from 'react'
 import { GitFork, ArrowUpRight, ArrowDownRight } from 'lucide-react'
 import styles from './ProjectCard.module.css'
 
@@ -16,17 +17,21 @@ type ProjectCardProps = {
 }
 
 function ProjectCard({ title, description, tags, date, links }: ProjectCardProps) {
+  const titleId = useId()
+
   return (
-    <article className={styles.card}>
+    <article className={styles.card} aria-labelledby={titleId}>
       <div className={styles.body}>
-        <p className={styles.description}>{description}</p>
         <div className={styles.bottomPart}>
-          <h3 className={styles.title}>{title}</h3>
+          <h3 id={titleId} className={styles.title}>
+            {title}
+          </h3>
           <div className={styles.info}>
             <span>{tags}</span>
             <span>{date}</span>
           </div>
         </div>
+        <p className={styles.description}>{description}</p>
       </div>
       <div className={styles.links}>
         {links.github && (
@@ -35,7 +40,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             href={links.github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${title} GitHub repository`}
+            aria-label={`${title} GitHub repository (opens in new tab)`}
           >
             <GitFork strokeWidth={1.0} />
           </a>
@@ -46,7 +51,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             href={links.website}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${title} website`}
+            aria-label={`${title} website (opens in new tab)`}
           >
             <ArrowUpRight strokeWidth={1.0} />
           </a>
@@ -57,7 +62,7 @@ function ProjectCard({ title, description, tags, date, links }: ProjectCardProps
             href={links.caseStudy}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`${title} case study`}
+            aria-label={`${title} case study (opens in new tab)`}
           >
             <ArrowDownRight strokeWidth={1.0} />
           </a>
