@@ -13,6 +13,11 @@
   letter-spacing: 0.05em;
 }
 
+/* Scoped to the visible label so the visually-hidden suffix stays natural case. */
+.label {
+  text-transform: uppercase;
+}
+
 @media (max-width: 767px) {
   .button {
     height: 40px;

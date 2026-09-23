@@ -24,6 +24,8 @@
 .label {
   font-weight: var(--font-weight-semibold);
   color: var(--color-ink);
+  /* Natural-case source text so screen readers don't spell it out. */
+  text-transform: uppercase;
   white-space: nowrap;
   margin: 0;
 }
