@@ -8,10 +8,10 @@ import styles from './Contact.module.css'
 
 function Contact() {
   return (
-    <section id="contact" className={styles.contact}>
+    <section id="contact" aria-labelledby="contact-heading" className={styles.contact}>
       <Container className={styles.row}>
         <div className={styles.illustration}>
-          <SectionLabel label="contact" />
+          <SectionLabel id="contact-heading" label="contact" />
         </div>
         <div className={styles.details}>
           <ContactList />
