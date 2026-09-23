@@ -38,7 +38,7 @@
 
 .value a {
   font-weight: var(--font-weight-regular);
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
   text-decoration: none;
 }
 

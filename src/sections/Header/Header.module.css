@@ -52,11 +52,12 @@
 }
 
 .accent {
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
   text-decoration: none;
 }
 
-.accent:hover {
+.accent:hover,
+.accent:focus-visible {
   text-decoration: underline;
 }
 
