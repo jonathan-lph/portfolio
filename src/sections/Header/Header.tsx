@@ -9,7 +9,7 @@ function Header() {
   const { leftHanded, toggle } = useHandedness()
 
   return (
-    <header className={styles.header}>
+    <header id="top" className={styles.header}>
       <div className={styles.banner}>
         <Container className={`${styles.bannerInner} ${leftHanded ? styles.leftHanded : ''}`}>
           <button
