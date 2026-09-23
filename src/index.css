@@ -9,6 +9,13 @@
 
 html {
   font-size: 100%; /* 1rem = 16px */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 html,
@@ -27,4 +34,11 @@ body {
 
 #root {
   min-height: 100svh;
+}
+
+/* Two-tone ring so focus stays visible on both the cream page and the dark banner. */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--color-bg);
 }

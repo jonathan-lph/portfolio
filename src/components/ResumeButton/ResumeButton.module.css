@@ -8,9 +8,14 @@
   font-family: var(--font-family);
   font-weight: var(--font-weight-semibold);
   font-size: var(--text-md);
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
   text-decoration: none;
   letter-spacing: 0.05em;
+}
+
+/* Scoped to the visible label so the visually-hidden suffix stays natural case. */
+.label {
+  text-transform: uppercase;
 }
 
 @media (max-width: 767px) {

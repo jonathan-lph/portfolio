@@ -2,22 +2,18 @@ import { ArrowUp } from 'lucide-react'
 import { useHandedness } from '../../context/HandednessContext'
 import styles from './BackToTop.module.css'
 
+/* A link rather than a button so the browser also moves keyboard focus to the top. */
 function BackToTop() {
   const { leftHanded } = useHandedness()
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   return (
-    <button
-      type="button"
-      className={`${styles.button} ${leftHanded ? styles.left : ''}`}
-      onClick={scrollToTop}
+    <a
+      className={`${styles.link} ${leftHanded ? styles.left : ''}`}
+      href="#top"
       aria-label="Back to top"
     >
       <ArrowUp strokeWidth={1.0} />
-    </button>
+    </a>
   )
 }
 

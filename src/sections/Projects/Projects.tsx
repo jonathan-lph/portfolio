@@ -7,11 +7,13 @@ import styles from './Projects.module.css'
 
 function Projects() {
   return (
-    <section id="projects" className={styles.projects}>
+    <section id="projects" aria-labelledby="projects-heading" className={styles.projects}>
       <div className={styles.banner}>
         <Container className={styles.bannerInner}>
           <div className={styles.box}>
-            <p className={styles.label}>projects</p>
+            <h2 id="projects-heading" className={styles.label}>
+              projects
+            </h2>
           </div>
           <div className={styles.trapezoid} />
         </Container>

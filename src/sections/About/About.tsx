@@ -13,7 +13,7 @@ const PARAGRAPHS = [
 
 function About() {
   return (
-    <section id="about" className={styles.about}>
+    <section id="about" aria-labelledby="about-heading" className={styles.about}>
       <Container className={styles.row}>
         <div className={styles.text}>
           {PARAGRAPHS.map((paragraph) => (
@@ -21,7 +21,7 @@ function About() {
           ))}
         </div>
         <div className={styles.illustration}>
-          <SectionLabel label="about" flip />
+          <SectionLabel id="about-heading" label="about" flip />
         </div>
       </Container>
       <Container className={styles.end}>

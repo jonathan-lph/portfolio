@@ -1,11 +1,13 @@
 .header {
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  /* Minimum, not fixed: the intro grows with larger text instead of overflowing. */
+  min-height: 100dvh;
 }
 
 .banner {
-  height: 61.8%;
+  flex: none;
+  height: 61.8dvh;
   background: var(--color-ink);
 }
 
@@ -31,7 +33,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 2rem;
-  height: 38.2%;
+  min-height: 38.2dvh;
   padding: 1.75rem 2.625rem;
 }
 
@@ -50,21 +52,22 @@
 }
 
 .accent {
-  color: var(--color-accent);
+  color: var(--color-accent-on-light);
   text-decoration: none;
 }
 
-.accent:hover {
+.accent:hover,
+.accent:focus-visible {
   text-decoration: underline;
 }
 
 @media (max-width: 767px) {
   .header {
-    min-height: 720px;
+    min-height: max(100dvh, 720px);
   }
 
   .banner {
-    height: 55%;
+    height: max(55dvh, 396px); /* 55% of the 720px floor */
   }
 
   .bannerInner {
@@ -87,7 +90,7 @@
   }
 
   .intro {
-    height: 45%;
+    min-height: max(45dvh, 324px); /* 45% of the 720px floor */
     flex-direction: column;
     justify-content: flex-start;
     gap: 2.5rem;

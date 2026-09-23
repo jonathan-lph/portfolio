@@ -2,6 +2,7 @@
   --color-bg: #f6f1ea;
   --color-ink: #201c1c;
   --color-accent: #df7c26;
+  --color-accent-on-light: #c04600;
 
   /* Spacing scale — matches gutters/gaps seen in the Figma design (1rem = 16px) */
   --space-1: 0.25rem; /* 4px */

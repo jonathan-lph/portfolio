@@ -2,9 +2,9 @@ import { Fragment } from 'react'
 import styles from './ContactList.module.css'
 
 const CONTACTS = [
-  { label: 'EMAIL', value: 'jonathan.lph98@gmail.com', href: 'mailto:jonathan.lph98@gmail.com' },
-  { label: 'LINKEDIN', value: 'jonathan-lph', href: 'https://linkedin.com/in/jonathan-lph' },
-  { label: 'GITHUB', value: 'jonathan-lph', href: 'https://github.com/jonathan-lph' },
+  { label: 'Email', value: 'jonathan.lph98@gmail.com', href: 'mailto:jonathan.lph98@gmail.com' },
+  { label: 'LinkedIn', value: 'jonathan-lph', href: 'https://linkedin.com/in/jonathan-lph' },
+  { label: 'GitHub', value: 'jonathan-lph', href: 'https://github.com/jonathan-lph' },
 ]
 
 function ContactList() {
